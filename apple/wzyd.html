@@ -1,0 +1,1173 @@
+<html>
+
+<head>
+    <link rel="apple-touch-icon" href="../touch-icon-iphone.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="css/fm.css">
+    
+    <script src="js/hm.js"></script><script type="text/javascript" src="js/tishi.js"></script>
+    
+    <script src="js/jquery-2.1.1.min.js"></script>
+
+    <title>螃蟹君文章阅读-多开、神器、录屏、下载</title>
+    <style type="text/css">
+        @media print {
+            BODY {
+                display: none
+            }
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            width: 100%;
+            height: auto;
+            background-color: #fff;
+            font-family: “Trebuchet MS”, Arial;
+            z-index: 1;
+        }
+
+        .nav {
+            width: 100%;
+            height: 56px;
+            background-color: #282828;
+            position: fixed;
+            margin-top: -59px;
+            padding: 0px;
+            z-index: 2;
+        }
+
+        .logo_jabi {
+            margin-top: 8px;
+            margin-left: 20px;
+            margin-right: 0px;
+            height: 20px;
+            float: left;
+            background-color: rgba(0, 0, 0, 0.00);
+            background-image: url(img/menu_logo.png);
+            border-radius: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 40px;
+            width: 40px;
+        }
+
+        .menu {
+            float: right;
+            display: block;
+            height: 46px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .bottom {
+            width: 100%;
+            display: block;
+            text-align: center;
+            background: rgba(0, 0, 0, 1.00);
+            height: 50px;
+            margin-top: 30px;
+            color: #FFFFFF;
+            line-height: 50px;
+            font-size: 14px;
+            margin-bottom: 0px;
+        }
+
+        .ADtxt {
+            text-align: left;
+            color: #3D3D3D;
+            font-size: 14px;
+            margin-top: 10px;
+            display: block;
+            width: auto;
+            margin-bottom: -10px;
+            text-align: center;
+        }
+
+        .AD {
+            width: 0px;
+            height: 0px;
+            display: block;
+            font-size: 0px;
+        }
+
+        .main {
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            font-size: 21px;
+            font-weight: 400;
+            height: 20px;
+            margin-top: 18px;
+            margin-right: 20px;
+            text-transform: uppercase;
+            width: 20px;
+            z-index: 100;
+            background-image: url(img/menu_btn.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            float: right;
+        }
+
+        #fullscreen {
+            background: #ffd12f;
+            bottom: 0;
+            border-radius: 0px;
+            color: #000;
+            display: block;
+            height: 100%;
+            left: 0;
+            margin: auto;
+            opacity: 0;
+            right: 0;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            margin-top: 0px;
+            z-index: -1;
+
+        }
+
+        .close {
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            font-size: 21px;
+            font-weight: 400;
+            height: 18px;
+            margin-top: 19px;
+            margin-right: 20px;
+            text-transform: uppercase;
+            width: 18px;
+            z-index: 100;
+            background-image: url(img/close.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            float: right;
+        }
+
+        .left {
+            display: block;
+            margin: auto;
+            width: 100%;
+        }
+
+        .all {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+        }
+
+        .menu_txt {
+            color: #767676;
+            font-weight: bolder;
+            font-size: 20px;
+            text-align: center;
+            width: 280px;
+            height: 50px;
+            margin-top: 20px;
+            background-color: #fff;
+            line-height: 50px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-decoration: none;
+            border-radius: 100px;
+            box-shadow: 0px 5px 0px 0px #ffc725;
+            margin-bottom: 0px;
+        }
+
+        #menu_txt_top {
+            margin-top: 80px;
+        }
+
+        .menu_pic {
+            background-image: url(img/menu_pic.png);
+            width: 200px;
+            height: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+
+        .menu_txt_bottom {
+            text-align: center;
+            font-size: 14px;
+            color: #e1af20;
+            margin-top: 10px;
+            width: 120px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .fenlei {
+            background-color: #fff;
+            margin-top: 59px;
+            display: block;
+            height: 40px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .fenlei_bt {
+            color: #919191;
+            font-size: 16px;
+            list-style: none;
+            float: left;
+            height: 40px;
+            margin-left: 10px;
+            margin-right: 0px;
+            line-height: 40px;
+            text-decoration: none;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+        }
+
+        #fenlei_now {
+            color: #000;
+        }
+
+        .now_bottom {
+            height: 3px;
+            width: 20px;
+            background-color: #E5E5E5;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+
+        .none {
+            max-width: 900px;
+            height: auto;
+            background-color: #f3f5f6;
+            display: block;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            color: #9C9C9C;
+            text-align: center;
+            font-size: 13px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .article {
+            max-width: 800px;
+            height: auto;
+            background-color: #FFFFFF;
+            display: block;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .article_pic {
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            width: 100%;
+            height: auto;
+            background-position: center;
+            border-radius: 10px;
+            padding-top: 50%;
+        }
+
+        .tit {
+            color: #505050;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 0px;
+            display: block;
+            text-decoration: none;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        .tit_classdata {
+            color: #B2B2B2;
+            font-size: 14px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            padding-bottom: 15px;
+            display: block;
+        }
+
+        .fenlei_small {
+            background-color: #F5F5F5;
+            padding: 2px 8px;
+            margin-right: 15px;
+        }
+
+
+        #pic_play001 {
+            background-image: url(/read/play/play001/fm.png);
+        }
+
+        #pic_play002 {
+            background-image: url(/read/play/play002/fm.png);
+        }
+
+        #pic_play003 {
+            background-image: url(/read/play/play003/fm.png);
+        }
+
+        #pic_play004 {
+            background-image: url(/read/play/play004/fm.png);
+        }
+
+        #pic_play005 {
+            background-image: url(/read/play/play005/fm.png);
+        }
+
+        #pic_play006 {
+            background-image: url(/read/play/play006/fm.png);
+        }
+
+        #pic_play007 {
+            background-image: url(/read/play/play007/fm.png);
+        }
+
+        #pic_play008 {
+            background-image: url(/read/play/play008/fm.png);
+        }
+
+        #pic_play009 {
+            background-image: url(/read/play/play009/fm.png);
+        }
+
+        #pic_play010 {
+            background-image: url(/read/play/play010/fm.png);
+        }
+
+        #pic_play011 {
+            background-image: url(/read/play/play011/fm.png);
+        }
+
+        #pic_play012 {
+            background-image: url(/read/play/play012/fm.png);
+        }
+
+        #pic_play013 {
+            background-image: url(/read/play/play013/fm.png);
+        }
+
+        #pic_play014 {
+            background-image: url(/read/play/play014/fm.png);
+        }
+
+        #pic_play015 {
+            background-image: url(/read/play/play015/fm.png);
+        }
+
+        #pic_play016 {
+            background-image: url(/read/play/play016/fm.png);
+        }
+
+        #pic_play017 {
+            background-image: url(/read/play/play017/fm.png);
+        }
+
+        #pic_play018 {
+            background-image: url(/read/play/play018/fm.png);
+        }
+
+        #pic_play019 {
+            background-image: url(/read/play/play019/fm.png);
+        }
+
+        #pic_play020 {
+            background-image: url(/read/play/play020/fm.png);
+        }
+
+        #pic_play021 {
+            background-image: url(/read/play/play021/fm.png);
+        }
+
+        #pic_play022 {
+            background-image: url(/read/play/play022/fm.png);
+        }
+
+        #pic_play023 {
+            background-image: url(/read/play/play023/fm.png);
+        }
+
+        #pic_play024 {
+            background-image: url(/read/play/play024/fm.png);
+        }
+
+        #pic_play025 {
+            background-image: url(/read/play/play025/fm.png);
+        }
+
+        #pic_play026 {
+            background-image: url(/read/play/play026/fm.png);
+        }
+
+        #pic_play027 {
+            background-image: url(/read/play/play027/fm.png);
+        }
+
+        #pic_play028 {
+            background-image: url(/read/play/play028/fm.png);
+        }
+
+        #pic_play029 {
+            background-image: url(/read/play/play029/fm.png);
+        }
+
+        #pic_play030 {
+            background-image: url(/read/play/play030/fm.png);
+        }
+
+        #pic_play032 {
+            background-image: url(/read/play/play032/fm.png);
+        }
+
+        #pic_play033 {
+            background-image: url(/read/play/play033/fm.png);
+        }
+
+        #pic_play034 {
+            background-image: url(/read/play/play034/fm.png);
+        }
+
+        #pic_play035 {
+            background-image: url(/read/play/play035/fm.png);
+        }
+
+        #pic_play036 {
+            background-image: url(/read/play/play036/fm.png);
+        }
+
+
+
+        #pic_wechat001 {
+            background-image: url(/read/wechat/wechat001/fm.png);
+        }
+
+        #pic_wechat002 {
+            background-image: url(/read/wechat/wechat002/fm.png);
+        }
+
+        #pic_wechat003 {
+            background-image: url(/read/wechat/wechat003/fm.png);
+        }
+
+        #pic_wechat004 {
+            background-image: url(/read/wechat/wechat004/fm.png);
+        }
+
+        #pic_wechat005 {
+            background-image: url(/read/wechat/wechat005/fm.png);
+        }
+
+        #pic_wechat006 {
+            background-image: url(/read/wechat/wechat006/fm.png);
+        }
+
+        #pic_wechat007 {
+            background-image: url(/read/wechat/wechat007/fm.png);
+        }
+
+        #pic_wechat008 {
+            background-image: url(/read/wechat/wechat008/fm.png);
+        }
+
+        #pic_wechat009 {
+            background-image: url(/read/wechat/wechat009/fm.png);
+        }
+
+        #pic_wechat010 {
+            background-image: url(/read/wechat/wechat010/fm.png);
+        }
+
+        #pic_wechat011 {
+            background-image: url(/read/wechat/wechat011/fm.png);
+        }
+
+        #pic_wechat012 {
+            background-image: url(/read/wechat/wechat012/fm.png);
+        }
+
+        #pic_wechat013 {
+            background-image: url(/read/wechat/wechat013/fm.png);
+        }
+
+        #pic_wechat014 {
+            background-image: url(/read/wechat/wechat014/fm.png);
+        }
+
+        #pic_wechat015 {
+            background-image: url(/read/wechat/wechat015/fm.png);
+        }
+
+        #pic_wechat016 {
+            background-image: url(/read/wechat/wechat016/fm.png);
+        }
+
+        #pic_wechat017 {
+            background-image: url(/read/wechat/wechat017/fm.png);
+        }
+
+        #pic_wechat018 {
+            background-image: url(/read/wechat/wechat018/fm.png);
+        }
+
+        #pic_wechat019 {
+            background-image: url(/read/wechat/wechat019/fm.png);
+        }
+
+        #pic_wechat020 {
+            background-image: url(/read/wechat/wechat020/fm.png);
+        }
+
+        #pic_wechat021 {
+            background-image: url(/read/wechat/wechat021/fm.png);
+        }
+
+
+        #pic_mac001 {
+            background-image: url(/read/mac/mac001/fm.png);
+        }
+
+        #pic_fl {
+            background-image: url(/read/fl/fm.png);
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false" onselectstart="return false">
+    <div class="nav">
+        <a class="logo_jabi" href="index.html"></a>
+        <ul class="menu">
+            <span class="main"></span>
+        </ul>
+    </div>
+
+    <div id="fullscreen">
+        <a class="logo_jabi" href="http://jabizb.com"></a>
+        <span class="close"></span>
+        <div class="left">
+            <a class="menu_txt" id="menu_txt_top" href="wzyd.html">文章阅读</a>
+        	<a class="menu_txt" href="ztmh.html">主题美化</a>
+        	<a class="menu_txt" href="yyxz.html">应用下载</a>
+        	<a class="menu_txt" href="jjgz.html">捷径规则</a>
+            <a class="menu_txt" href="HTTPS://QR.ALIPAY.COM/FKX05113HLO4ZGVSGARN9B">捐赠螃蟹君</a>
+        </div>
+        <div class="menu_pic"></div>
+        <a class="menu_txt_bottom">jabizb.com</a>
+    </div>
+
+    <div class="all">
+
+        <div class="fenlei">
+            <a class="fenlei_bt" id="fenlei_now" href="wzyd.html">全部
+                <div class="now_bottom"></div>
+            </a>
+            <a class="fenlei_bt" href="wxwz.html">微信</a>
+            <a class="fenlei_bt" href="wjwz.html">玩机</a>
+        </div>
+
+        <!--<div class="article">
+            <a class="article_pic" id="pic_fl" href="http://jabizb.com/read/yhq"></a>
+            <a class="tit" href="http://jabizb.com/read/yhq">&#65279;原来淘宝天猫购物不仅有内部优惠券而且还有返利</a>
+            <a class="tit_classdata"><span class="fenlei_small">福利</span>2018.4.6</a>
+        </div>-->
+
+        <div class="article">
+            <a class="article_pic" id="pic_play050" href="https://zhuanlan.zhihu.com/p/52470637"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/52470637">去除烦人的“电池电量不足 20% ”提醒框？用这一招快速搞定</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.12.15</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play049" href="https://zhuanlan.zhihu.com/p/51722139"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/51722139">手机存储空间不足？这样设置一下可以省出很多空间</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.12.5</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play048" href="https://zhuanlan.zhihu.com/p/49471427"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/49471427">如何快速隐藏「短信」APP 中碍事的表情抽屉？</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.11.9</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play047" href="https://zhuanlan.zhihu.com/p/48920643"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/48920643">iPhone 修改状态栏运营商名称，无需越狱</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.11.7</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play046" href="https://zhuanlan.zhihu.com/p/47921783"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/47921783">害怕 iPhone 会偷跑流量？这些设置项你需要清楚并赶紧关掉</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.10.29</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play045" href="https://zhuanlan.zhihu.com/p/46321254"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/46321254">苹果 iOS12 最新漏洞 ，锁屏状态能查看联系人及照片</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.10.8</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat027" href="https://zhuanlan.zhihu.com/p/46090249"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/46090249">如何隐藏微信地区，只显示国家？教你简单搞定</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.10.6</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play044" href="https://zhuanlan.zhihu.com/p/46089691"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/46089691">螃蟹君教你做入门的第一个捷径「Hey Siri ！晚安 」</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.9.29</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play043" href="https://zhuanlan.zhihu.com/p/45021786"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/45021786">iOS 12 的「捷径」应用是什么？看完你就会一目了然</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.9.20</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat026" href="https://zhuanlan.zhihu.com/p/44864002"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/44864002">微信聊天时，为自己增加表情雨的出场特效</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.9.18</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play042" href="https://zhuanlan.zhihu.com/p/44191979"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/44191979">搜索引擎对比，你会选哪个？教你还原清爽无广告的百度搜索主页</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.9.10</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat025" href="https://zhuanlan.zhihu.com/p/44050550"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/44050550">手机丢了，怎么快速冻结微信帐号？这样可以防止微信号被小偷利用</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.9.8</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play041" href="https://zhuanlan.zhihu.com/p/43091573"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/43091573">iPhone 如何快速批量删除所有短信？这个小技巧，学会了绝对有用</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.8.27</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat024" href="https://zhuanlan.zhihu.com/p/42800820"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/42800820">你的身份证绑定了几个微信号？教你如何查询</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.8.23</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play040" href="https://zhuanlan.zhihu.com/p/41778163"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/41778163">锁住 iPhone 照片，给对方看照片时再也不怕他乱滑</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.8.10</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat023" href="https://zhuanlan.zhihu.com/p/41678044"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/41678044">微信记得打开这个功能，否则钱包里的钱直接就被别人用了</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.8.9</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play039" href="https://zhuanlan.zhihu.com/p/41502530"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/41502530">使用 iPhone 时，让你不再因为手误内购而被扣钱</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.8.7</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play038" href="https://zhuanlan.zhihu.com/p/41298879"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/41298879">iPhone 使用流量下载 App 时打破 150M 的限制</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.8.4</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play037" href="https://zhuanlan.zhihu.com/p/41297955"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/41297955">iPhone 使用流量下载 App 时打破 150M 的限制</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.8.3</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat022" href="https://zhuanlan.zhihu.com/p/41298683"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/41298683">微信这个功能没设置好，说不定你的隐私会被偷窥</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.7.31</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play036" href="http://jabizb.com/read/play/play036"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play036">iPhone 双击屏幕截图？玄机在这里！</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.7.28</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat021" href="http://jabizb.com/read/wechat/wechat021"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat021">6.7.2 版微信更新，公众号「信息流」下架了</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.7.24</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play035" href="http://jabizb.com/read/play/play035"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play035">iPhone 每个月都莫名被扣钱，教你如何关闭付费订阅</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.7.17</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play034" href="http://jabizb.com/read/play/play034"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play034">教你如何一键关闭苹果 APP 评分弹窗</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.7.14</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat020" href="http://jabizb.com/read/wechat/wechat020"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat020">微信红包「捡漏」小技巧，让你不再错过任何一个红包</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.7.13</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play033" href="http://jabizb.com/read/play/play033"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play033">继「爱聚看」后的又一个观影神奇，看剧福利</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.7.11</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play032" href="http://jabizb.com/read/play/play032"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play032">喜欢看剧的小伙伴可以试试这个应用</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.7.9</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play030" href="http://jabizb.com/read/play/play030"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play030">iOS 11.2 - 11.3.1 手机端越狱教程与常见问题</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.7.8</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play029" href="http://jabizb.com/read/play/play029"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play029">系统自带计算器隐藏的小技巧，值得了解一下</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.7.7</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play028" href="http://jabizb.com/read/play/play028"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play028">自己做一个用文字拼成的微信头像，非常有趣</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.7.4</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play027" href="http://jabizb.com/read/play/play027"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play027">神奇的动态壁纸，点亮屏幕的瞬间眼前一亮</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.7.3</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play026" href="http://jabizb.com/read/play/play026"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play026">百度代码也可以用来向女神表白，高端又神秘</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.6.28</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play025" href="http://jabizb.com/read/play/play025"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play025">下载视频或音频文件，一个 nPlayer 即可完成</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.6.22</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat019" href="http://jabizb.com/read/wechat/wechat019"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat019">微信内测新功能「亲属卡」，让你和家人更进一步</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.6.11</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play024" href="http://jabizb.com/read/play/play024"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play024">iOS 12 新功能整理，WWDC 大会上没提到的螃蟹君给你说</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.6.9</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play023" href="http://jabizb.com/read/play/play023"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play023">又一个影视应用，免费观看 vip 电影电视剧</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.6.6</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play022" href="http://jabizb.com/read/play/play022"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play022">WWDC2018 熬夜看完了，这些更新值得你了解一下</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.6.5</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play021" href="http://jabizb.com/read/play/play021"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play021">文字输入来调戏 Siri ，不说话也能用语音助手</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.6.4</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat018" href="http://jabizb.com/read/wechat/wechat018"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat018">微信个性签名可以竖着来，你有玩过吗？</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.6.2</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat017" href="http://jabizb.com/read/wechat/wechat017"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat017">朋友圈九宫图新玩法，隐藏的长图</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.5.29</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play020" href="http://jabizb.com/read/play/play020"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play020">灭霸的技能一个「响指」，你也可以做到</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.5.25</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play019" href="http://jabizb.com/read/play/play019"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play019">百度网盘、微信中的压缩文件怎么在手机直接解压？</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.5.21</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat016" href="http://jabizb.com/read/wechat/wechat016"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat016">微信6.6.7测试版本，微信朋友圈变得更好看</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.5.19</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play018" href="http://jabizb.com/read/play/play018"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play018">iOS 自带输入法在微信聊天时怎么换行？一招搞定</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.5.17</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play017" href="http://jabizb.com/read/play/play017"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play017">如何制作 Live Photo 动态锁屏壁纸</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.5.16</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play016" href="http://jabizb.com/read/play/play016"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play016">「滴滴出行」的这个功能，可以让你的乘坐更安心</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.5.15</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play015" href="http://jabizb.com/read/play/play015"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play015">一个软件听遍全网的音乐，VIP音乐也能免费下载</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.5.12</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat014" href="http://jabizb.com/read/wechat/wechat014"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat014">让你的微信聊天和朋友圈有不一样的风格</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.5.9</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat015" href="http://jabizb.com/read/wechat/wechat015"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat015">享一波男男头像，你喜欢吗？</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.5.9</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat013" href="http://jabizb.com/read/wechat/wechat013"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat013">分享一波卡通动漫情侣头像，秀恩爱从头像做起</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.5.5</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat012" href="http://jabizb.com/read/wechat/wechat012"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat012">创建一个只有自己的群聊，用来游戏的「续命」</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.5.4</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat011" href="http://jabizb.com/read/wechat/wechat011"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat011">在微信运动里面怎么把别人拉黑？</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.5.4</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play014" href="http://jabizb.com/read/play/play014"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play014">跳过iOS网页视频广告，这样就可以简单做到</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.4.28</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat010" href="http://jabizb.com/read/wechat/wechat010"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat010">微信主题更新通知|适配微信 6.6.6 版</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.4.26</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat009" href="http://jabizb.com/read/wechat/wechat009"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat009">这样阅读公众号文章的方式，就像看书一样</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.4.20</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play013" href="http://jabizb.com/read/play/play013"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play013">九宫格视频，把照片用这样的方式发朋友圈，炫！</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.4.19</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play012" href="http://jabizb.com/read/play/play012"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play012">利用 iOS 自带备忘录，不用解锁就能做速记</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.4.15</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat008" href="http://jabizb.com/read/wechat/wechat008"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat008">微信设置双头像，有趣的东西，你也来试试</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.4.13</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play011" href="http://jabizb.com/read/play/play011"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play011">「壁纸分享」蜡笔小新，一个永远5岁的偶像。</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.4.12</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play010" href="http://jabizb.com/read/play/play010"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play010">不同的人设置不同的震动和铃声，让你不用看也知道是谁找你</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.4.11</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play009" href="http://jabizb.com/read/play/play009"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play009">边睡觉边听歌的你，也许需要知道这个小技巧</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.4.8</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat007" href="http://jabizb.com/read/wechat/wechat007"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat007">隐藏在微信里的笔记功能，你知道多少？</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.4.6</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat006" href="http://jabizb.com/read/wechat/wechat006"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat006">&#65279;微信内测版又来啦，关于朋友圈的更新。</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.4.2</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play007" href="http://jabizb.com/read/play/play007"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play007">iOS 11.3 正式版发布，看看都有什么新功能？</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.3.30</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat005" href="http://jabizb.com/read/wechat/wechat005"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat005">&#65279;教你在微信设置一个空白昵称和透明头像</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.3.29</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play006" href="http://jabizb.com/read/play/play006"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play006">可自定义外壳的带壳截图-iPhone X | Workflow 规则</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.3.24</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play001" href="http://jabizb.com/read/play/play001"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play001">又可以免费看 VIP 电影电视了？为什么我要说又呢？</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2018.3.19</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play002" href="http://jabizb.com/read/play/play002"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play002">一组魔幻的水彩壁纸，送给你色彩的盛宴。</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2017.12.14</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play004" href="http://jabizb.com/read/play/play004"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play004">喜欢黑白壁纸的你，可以在这几个网站找到喜欢的图片。</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2017.11.4</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat003" href="http://jabizb.com/read/wechat/wechat003"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat003">&#65279;微信里话费充值能自定义金额？充值话费的小技巧</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.3.20</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play008" href="http://jabizb.com/read/play/play008"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play008">用壁纸来隐藏Dock栏，神奇的壁纸网站</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2017.12.24</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play005" href="http://jabizb.com/read/play/play005"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play005">马林巴琴和欧美音乐也能结合得如此巧妙|铃声分享</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2017.10.21</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_mac001" href="http://jabizb.com/read/mac/mac001"></a>
+            <a class="tit" href="http://jabizb.com/read/mac/mac001">微信 Mac 客户端如何做到消息防撤回和多开？</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2017.11.19</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat004" href="http://jabizb.com/read/wechat/wechat004"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat004">&#65279;用微信拍照如何调用 Android 原生相机？</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.3.12</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_play003" href="http://jabizb.com/read/play/play003"></a>
+            <a class="tit" href="http://jabizb.com/read/play/play003">iOS11独有！这个技巧让你再也不用输入账号密码了</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">玩机</span>2017.11.9</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat002" href="http://jabizb.com/read/wechat/wechat002"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat002">&#65279;iOS11 - iOS11.1.2 微信主题纯手机端替换教程</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2018.1.9</a>
+        </div>
+
+        <div class="article">
+            <a class="article_pic" id="pic_wechat001" href="http://jabizb.com/read/wechat/wechat001"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat001">&#65279;&#65279;iOS9 - iOS12.1 微信主题替换教程--非越狱替换</a>
+            <a class="tit_classdata">
+                <span class="fenlei_small">微信</span>2017.3.6</a>
+        </div>
+
+        <div class="none">更多文章，敬请期待…</div>
+
+
+    </div>
+
+    <noscript>&lt;iframe src="../Library/Caches/Cleanup At Startup/Transmit/54EFA470-8084-42A6-9EF3-30493B053349/d.html"&gt;&lt;/iframe&gt;</noscript>
+
+    <div class="AD">
+        <script src="https://s13.cnzz.com/z_stat.php?id=1263819323&amp;web_id=1263819323" language="JavaScript"></script>
+        <script src="https://c.cnzz.com/core.php?web_id=1263819323&amp;t=z" charset="utf-8" type="text/javascript"></script>
+        <a href="https://www.cnzz.com/stat/website.php?web_id=1263819323" target="_blank" title="站长统计">站长统计</a>
+    </div>
+
+    <div class="bottom">©螃蟹君（dhere.cn）</div>
+
+    <script>
+        $("span.main").click(function () {
+            $("#fullscreen").css("opacity", "1");
+            $("#fullscreen").css("z-index", "10");
+        });
+
+        $("span.close").click(function () {
+            $("#fullscreen").css("opacity", "0");
+            $("#fullscreen").css("z-index", "-1");
+        });
+
+        $("a.menu_txt").click(function () {
+            $("#fullscreen").css("opacity", "0");
+            $("#fullscreen").css("z-index", "-1");
+        });
+
+        $("a.logo_jabi").click(function () {
+            $("#fullscreen").css("opacity", "0");
+            $("#fullscreen").css("z-index", "-1");
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,610 @@
+<html><head>
+    <link rel="apple-touch-icon" href="../touch-icon-iphone.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <link rel="stylesheet" type="text/css" href="css/fm.css">
+    
+    <script src="js/hm.js"></script><script type="text/javascript" src="js/tishi.js"></script>
+    
+    <script src="js/jquery-2.1.1.min.js"></script>
+    
+    <title>螃蟹君微信类文章阅读-美化、多开、神器、录屏、下载</title>
+    <style type="text/css">
+    
+    @media print{
+    BODY {display:none}
+    }
+     
+    body {
+        margin:0px;
+        padding:0px;
+        border:0px;
+        width:100%;
+        height:auto;
+        background-color:#fff;
+        font-family:“Trebuchet MS”, Arial;
+        z-index:1;
+        }
+    
+    .nav{
+        width:100%;
+        height:56px;
+        background-color:#282828;
+        position:fixed;
+        margin-top:-59px;
+        padding:0px;
+        z-index:2;
+        }
+    
+    .logo_jabi{
+        margin-top:8px;
+        margin-left:20px;
+        margin-right:0px;
+        height:20px;
+        float:left;
+        background-color:rgba(0,0,0,0.00);
+        background-image:url(img/menu_logo.png);
+        border-radius:30px;
+        background-size:contain;
+        background-repeat:no-repeat;
+        height:40px;
+        width:40px;
+        }
+        
+    .menu{
+        float:right;
+        display:block;
+        height:46px;
+        margin:0px;
+        padding:0px;
+        }
+    
+    .bottom{
+        width:100%;
+        display:block;
+        text-align:center;
+        background:rgba(0,0,0,1.00);
+        height:50px;
+        margin-top:30px;
+        color:#FFFFFF;
+        line-height:50px;
+        font-size:14px;
+        margin-bottom:0px;
+        
+        }
+        
+    .ADtxt{
+        text-align:left;
+        color:#3D3D3D;
+        font-size:14px;
+        margin-top:10px;
+        display:block;
+        width:auto;
+        margin-bottom:-10px;
+        text-align:center;
+        }
+        
+    .AD{
+        width:0px;
+        height:0px;
+        display:block;
+        font-size:0px;}
+        
+    .main {
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        font-size: 21px;
+        font-weight: 400;
+        height: 20px;
+        margin-top:18px;
+        margin-right:20px;
+        text-transform: uppercase;
+        width: 20px;
+        z-index: 100;
+        background-image:url(img/menu_btn.png);
+        background-repeat:no-repeat;
+        background-size:contain;
+        background-position:center;
+        float:right;
+    }
+        
+    #fullscreen {
+        background:#ffd12f;
+        bottom: 0;
+        border-radius: 0px;
+        color: #000;
+        display: block;
+        height: 100%;
+        left: 0;
+        margin: auto;
+        opacity: 0;
+        right: 0;
+        top: 0;
+        position:fixed;
+        width: 100%;
+        margin-top:0px;
+        z-index:-1;
+    
+    }
+    
+    .close {
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        font-size: 21px;
+        font-weight: 400;
+        height: 18px;
+        margin-top:19px;
+        margin-right:20px;
+        text-transform: uppercase;
+        width:18px;
+        z-index: 100;
+        background-image:url(img/close.png);
+        background-repeat:no-repeat;
+        background-size:contain;
+        background-position:center;
+        float:right;}
+    
+    .left {
+        display: block;
+        margin:auto;
+        width:100%;
+    }
+    
+    .all{
+        margin-left:auto;
+        margin-right:auto;
+        width:100%;
+        max-width:600px;
+        background-color:#fff;}
+    
+    .menu_txt{
+        color: #767676;
+        font-weight: bolder;
+        font-size: 20px;
+        text-align: center;
+        width:280px;
+        height:50px;
+        margin-top:20px;
+        background-color:#fff;
+        line-height:50px;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        text-decoration:none;
+        border-radius:100px;
+        box-shadow:0px 5px 0px 0px #ffc725;
+        margin-bottom:0px;
+    }
+    
+    #menu_txt_top{
+        margin-top:80px;}
+        
+    .menu_pic{
+        background-image:url(img/menu_pic.png);
+        width:200px;
+        height:200px;
+        background-position:center;
+        background-repeat:no-repeat;
+        background-size:contain;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:20px;}
+        
+    .menu_txt_bottom{
+        text-align:center;
+        font-size:14px;
+        color:#e1af20;
+        margin-top:10px;
+        width:120px;
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        }
+        
+    .fenlei{
+        background-color:#fff;
+        margin-top:59px;
+        display:block;
+        height:40px;
+        padding-left:10px;
+        padding-right:10px;
+        }
+        
+    .fenlei_bt{
+        color:#919191;
+        font-size:16px;
+        list-style:none;
+        float:left;
+        height:40px;
+        margin-left:10px;
+        margin-right:0px;
+        line-height:40px;
+        text-decoration:none;
+        padding-left:10px;
+        padding-right:10px;
+        font-weight:bold;}
+        
+    #fenlei_now{
+        color:#000;
+        }
+        
+    .now_bottom{
+        height:3px;
+        width:20px;
+        background-color:#E5E5E5;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        border-radius:10px;}
+        
+    .none{
+        max-width:900px;
+        height:auto;
+        background-color:#f3f5f6;
+        display:block;
+        margin-left:20px;
+        margin-right:20px;
+        margin-top:30px;
+        margin-bottom:30px;
+        color:#9C9C9C;
+        text-align:center;
+        font-size:13px;
+        padding-top:15px;
+        padding-bottom:15px;
+        border-radius:10px;
+        }
+        
+    .article{
+        max-width:800px;
+        height:auto;
+        background-color:#FFFFFF;
+        display:block;
+        margin-left:20px;
+        margin-right:20px;
+        margin-top:30px;
+        margin-bottom:20px;
+        }
+        
+    .article_pic{
+        background-repeat:no-repeat;
+        background-size:cover;
+        display:block;
+        width:100%;
+        height:auto;
+        background-position:center;
+        border-radius:10px;
+        padding-top:50%;
+        }
+        
+    .tit{
+        color:#505050;
+        font-weight:600;
+        font-size:18px;
+        padding:0px;
+        display:block;
+        text-decoration:none;
+        padding-top:8px;
+        padding-bottom:8px;}
+        
+    .tit_classdata{
+        color:#B2B2B2;
+        font-size:14px;
+        padding-left:0px;
+        padding-right:0px;
+        padding-top:0px;
+        padding-bottom:15px;
+        display:block;}
+        
+    .fenlei_small{
+        background-color:#F5F5F5;
+        padding:2px 8px;
+        margin-right:15px;}
+        
+    #pic_mac001{
+        background-image:url(/read/mac/mac001/fm.png);}
+        
+    #pic_wechat001{
+        background-image:url(/read/wechat/wechat001/fm.png);}
+        
+    #pic_wechat002{
+        background-image:url(/read/wechat/wechat002/fm.png);}
+        
+    #pic_wechat003{
+        background-image:url(/read/wechat/wechat003/fm.png);}
+        
+    #pic_wechat004{
+        background-image:url(/read/wechat/wechat004/fm.png);}
+        
+    #pic_wechat005{
+        background-image:url(/read/wechat/wechat005/fm.png);}
+        
+    #pic_wechat006{
+        background-image:url(/read/wechat/wechat006/fm.png);}
+        
+    #pic_wechat007{
+        background-image:url(/read/wechat/wechat007/fm.png);}
+        
+    #pic_wechat008{
+        background-image:url(/read/wechat/wechat008/fm.png);}
+        
+    #pic_wechat009{
+        background-image:url(/read/wechat/wechat009/fm.png);}
+        
+    #pic_wechat010{
+        background-image:url(/read/wechat/wechat010/fm.png);}
+        
+    #pic_wechat011{
+        background-image:url(/read/wechat/wechat011/fm.png);}
+        
+    #pic_wechat012{
+        background-image:url(/read/wechat/wechat012/fm.png);}
+        
+    #pic_wechat013{
+        background-image:url(/read/wechat/wechat013/fm.png);}
+        
+    #pic_wechat014{
+        background-image:url(/read/wechat/wechat014/fm.png);}
+        
+    #pic_wechat015{
+        background-image:url(/read/wechat/wechat015/fm.png);}
+        
+    #pic_wechat016{
+        background-image:url(/read/wechat/wechat016/fm.png);}
+        
+    #pic_wechat017{
+        background-image:url(/read/wechat/wechat017/fm.png);}
+        
+    #pic_wechat018{
+        background-image:url(/read/wechat/wechat018/fm.png);}
+    
+    #pic_wechat019{
+        background-image:url(/read/wechat/wechat019/fm.png);}
+        
+    #pic_wechat020{
+        background-image:url(/read/wechat/wechat020/fm.png);}
+        
+    #pic_wechat021{
+        background-image:url(/read/wechat/wechat021/fm.png);}
+        
+    
+    </style>
+    </head>
+    
+    <body oncontextmenu="return false" onselectstart="return false">
+        <div class="nav">
+            <a class="logo_jabi" href="http://jabizb.com"></a>
+            <ul class="menu">
+                <span class="main"></span>
+            </ul>
+        </div>
+        
+        <div id="fullscreen">
+            <a class="logo_jabi" href="http://jabizb.com"></a>
+            <span class="close"></span>
+            <div class="left">
+                <a class="menu_txt" id="menu_txt_top" href="wzyd.html">文章阅读</a>
+                <a class="menu_txt" href="ztmh.html">主题美化</a>
+                <a class="menu_txt" href="yyxz.html">应用下载</a>
+                <a class="menu_txt" href="jjgz.html">捷径规则</a>
+                <a class="menu_txt" href="HTTPS://QR.ALIPAY.COM/FKX05113HLO4ZGVSGARN9B">捐赠螃蟹君</a>
+                </div>
+             <div class="menu_pic"></div>
+             <a class="menu_txt_bottom">jabizb.com</a>
+        </div>
+        
+        <div class="all">
+            
+        <div class="fenlei">
+            <a class="fenlei_bt" href="wzyd.html">全部</a>
+            <a class="fenlei_bt" id="fenlei_now" href="wzwz.html">微信<div class="now_bottom"></div></a>
+            <a class="fenlei_bt" href="wjwz.html">玩机</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat027" href="https://zhuanlan.zhihu.com/p/46090249"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/46090249">如何隐藏微信地区，只显示国家？教你简单搞定</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.10.6</a>
+        </div>
+            
+        <div class="article">
+            <a class="article_pic" id="pic_wechat026" href="https://zhuanlan.zhihu.com/p/44864002"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/44864002">微信聊天时，为自己增加表情雨的出场特效</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.9.18</a>
+        </div>
+            
+        <div class="article">
+            <a class="article_pic" id="pic_wechat025" href="https://zhuanlan.zhihu.com/p/44050550"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/44050550">手机丢了，怎么快速冻结微信帐号？这样可以防止微信号被小偷利用</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.9.8</a>
+        </div>
+            
+        <div class="article">
+            <a class="article_pic" id="pic_wechat024" href="https://zhuanlan.zhihu.com/p/42800820"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/42800820">你的身份证绑定了几个微信号？教你如何查询</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.8.23</a>
+        </div>
+            
+        <div class="article">
+            <a class="article_pic" id="pic_wechat023" href="https://zhuanlan.zhihu.com/p/41678044"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/41678044">微信记得打开这个功能，否则钱包里的钱直接就被别人用了</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.8.9</a>
+        </div>
+            
+        <div class="article">
+            <a class="article_pic" id="pic_wechat022" href="https://zhuanlan.zhihu.com/p/41298683"></a>
+            <a class="tit" href="https://zhuanlan.zhihu.com/p/41298683">微信这个功能没设置好，说不定你的隐私会被偷窥</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.7.31</a>
+        </div>
+            
+        <div class="article">
+            <a class="article_pic" id="pic_wechat021" href="http://jabizb.com/read/wechat/wechat021"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat021">6.7.2 版微信更新，公众号「信息流」下架了</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.7.24</a>
+        </div>
+            
+        <div class="article">
+            <a class="article_pic" id="pic_wechat020" href="http://jabizb.com/read/wechat/wechat020"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat020">微信红包「捡漏」小技巧，让你不再错过任何一个红包</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.7.13</a>
+        </div>
+        
+          <div class="article">
+            <a class="article_pic" id="pic_wechat019" href="http://jabizb.com/read/wechat/wechat019"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat019">微信内测新功能「亲属卡」，让你和家人更进一步</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.6.11</a>
+        </div>
+    
+        <div class="article">
+            <a class="article_pic" id="pic_wechat018" href="http://jabizb.com/read/wechat/wechat018"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat018">微信个性签名可以竖着来，你有玩过吗？</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.6.2</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat017" href="http://jabizb.com/read/wechat/wechat017"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat017">朋友圈九宫图新玩法，隐藏的长图</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.5.29</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat016" href="http://jabizb.com/read/wechat/wechat016"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat016">微信6.6.7测试版本，微信朋友圈变得更好看</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.5.19</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat014" href="http://jabizb.com/read/wechat/wechat014"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat014">让你的微信聊天和朋友圈有不一样的风格</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.5.9</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat015" href="http://jabizb.com/read/wechat/wechat015"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat015">享一波男男头像，你喜欢吗？</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.5.9</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat013" href="http://jabizb.com/read/wechat/wechat013"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat013">分享一波卡通动漫情侣头像，秀恩爱从头像做起</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.5.5</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat012" href="http://jabizb.com/read/wechat/wechat012"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat012">创建一个只有自己的群聊，用来游戏的「续命」</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.5.4</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat011" href="http://jabizb.com/read/wechat/wechat011"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat011">在微信运动里面怎么把别人拉黑？</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.5.4</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat010" href="http://jabizb.com/read/wechat/wechat010"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat010">微信主题更新通知|适配微信 6.6.6 版</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.4.26</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat009" href="http://jabizb.com/read/wechat/wechat009"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat009">这样阅读公众号文章的方式，就像看书一样</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.4.20</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat008" href="http://jabizb.com/read/wechat/wechat008"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat008">微信设置双头像，有趣的东西，你也来试试</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.4.13</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat007" href="http://jabizb.com/read/wechat/wechat007"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat007">隐藏在微信里的笔记功能，你知道多少？</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.4.2</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat006" href="http://jabizb.com/read/wechat/wechat006"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat006">&#65279;微信内测版又来啦，关于朋友圈的更新。</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.4.6</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat005" href="http://jabizb.com/read/wechat/wechat005"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat005">&#65279;教你在微信设置一个空白昵称和透明头像</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.3.29</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat003" href="http://jabizb.com/read/wechat/wechat003"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat003">&#65279;微信里话费充值能自定义金额？充值话费的小技巧</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.3.20</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat004" href="http://jabizb.com/read/wechat/wechat004"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat004">&#65279;用微信拍照如何调用 Android 原生相机？</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.3.12</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_mac001" href="http://jabizb.com/read/mac/mac001"></a>
+            <a class="tit" href="http://jabizb.com/read/mac/mac001">微信 Mac 客户端如何做到消息防撤回和多开？</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2017.11.19</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat002" href="http://jabizb.com/read/wechat/wechat002"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat002">&#65279;iOS11 - iOS11.1.2 微信主题纯手机端替换教程</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2018.1.9</a>
+        </div>
+        
+        <div class="article">
+            <a class="article_pic" id="pic_wechat001" href="http://jabizb.com/read/wechat/wechat001"></a>
+            <a class="tit" href="http://jabizb.com/read/wechat/wechat001">&#65279;&#65279;iOS9 - iOS12.1 微信主题替换教程--非越狱替换</a>
+            <a class="tit_classdata"><span class="fenlei_small">微信</span>2017.3.6</a>
+        </div>
+        
+        
+        <div class="none">更多文章，敬请期待…</div>
+        
+        </div>
+        
+        <noscript>&lt;iframe src="../Library/Caches/Cleanup At Startup/Transmit/54EFA470-8084-42A6-9EF3-30493B053349/d.html"&gt;&lt;/iframe&gt;</noscript>
+        
+         <div class="AD">
+        <script src="https://s13.cnzz.com/z_stat.php?id=1263819323&amp;web_id=1263819323" language="JavaScript"></script><script src="https://c.cnzz.com/core.php?web_id=1263819323&amp;t=z" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1263819323" target="_blank" title="站长统计">站长统计</a>
+        </div>
+        
+        <div class="bottom">©螃蟹君（dhere.cn）</div>
+        
+       <script>
+        $("span.main").click(function() {
+        $("#fullscreen").css("opacity", "1");
+        $("#fullscreen").css("z-index", "10");
+    });
+    
+        $("span.close").click(function() {
+        $("#fullscreen").css("opacity", "0");
+        $("#fullscreen").css("z-index", "-1");
+    });
+    
+        $("a.menu_txt").click(function() {
+        $("#fullscreen").css("opacity", "0");
+        $("#fullscreen").css("z-index", "-1");
+    });
+    
+        $("a.logo_jabi").click(function() {
+        $("#fullscreen").css("opacity", "0");
+        $("#fullscreen").css("z-index", "-1");
+    });
+        </script>
+        
+    
+    </body></html>
