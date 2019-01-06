@@ -1,0 +1,457 @@
+<html><head>
+    <link rel="apple-touch-icon" href="../touch-icon-iphone.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        
+    <script type="text/javascript" src="js/tishi.js"></script>
+    
+    <script src="js/jquery-2.1.1.min.js"></script>
+    
+    <meta charset="UTF-8">
+    <title>螃蟹君捷径规则-美化、多开、神器、录屏、下载</title>
+    <style type="text/css">
+    
+    @media print{
+    BODY {display:none}
+    }
+    
+    body{
+        margin:0px;
+        padding:0px;
+        font-family:Arial;
+        border:0px;
+        z-index:1;
+        }	
+    
+    .nav{
+        width:100%;
+        height:56px;
+        background-color:#282828;
+        position:fixed;
+        margin-top:-80px;
+        padding:0px;
+        z-index:2;
+        }
+    
+    .logo_jabi{
+        margin-top:8px;
+        margin-left:20px;
+        margin-right:0px;
+        height:20px;
+        float:left;
+        background-color:rgba(0,0,0,0.00);
+        background-image:url(img/menu_logo.png);
+        border-radius:30px;
+        background-size:contain;
+        background-repeat:no-repeat;
+        height:40px;
+        width:40px;
+        }
+        
+    .menu{
+        float:right;
+        display:block;
+        height:46px;
+        margin:0px;
+        padding:0px;
+        }
+        
+    .tip{
+        display:block;
+        margin-top:80px;
+        margin-left:20px;
+        margin-right:20px;
+        height:40px;
+        line-height:40px;
+        text-align:center;
+        color:#000;
+        font-size:16px;
+        padding-left:10px;
+        padding-right:10px;
+        font-weight:bold;
+        }
+        
+    .tip2{
+        display:block;
+        margin-top:20px;
+        margin-left:20px;
+        margin-right:20px;
+        height:40px;
+        line-height:40px;
+        text-align:center;
+        color:#AFAFAF;
+        font-size:14px;
+        padding-left:10px;
+        padding-right:10px;
+        font-weight:normal;
+        }
+        
+    .topmenu{
+        width: 48%;
+        display: block;
+        float: right;
+        background-color:#f1f1f1;
+        text-align: center;
+        border-radius:100px;
+        }
+        
+    #topmenunow{
+        background-color: black;
+        color: white;
+        margin-right: 10px;
+        float: left;
+        }
+        
+    ul{
+        margin-left:auto;
+        margin-right:auto;
+        padding:0px;
+        width:90%;
+        max-width:350px;
+        }
+        
+    li{
+        padding:0px;
+        margin-top:20px;
+        margin-left:0;
+        margin-right:0;
+        list-style:none;
+        border-radius:10px;
+        }
+        
+    .tit{
+        height:50px;
+        display:block;
+        font-size:18px;
+        line-height:50px;
+        padding-left:20px;
+        margin:0px;
+        font-weight:bold;
+        border-top-left-radius:15px;
+        border-top-right-radius:15px;
+        color: #fff;
+        }
+    
+    .ms{
+        display:block;
+        padding-left:20px;
+        font-size:12px;
+        padding-top:0px;
+        padding-bottom:10px;
+        padding-right:20px;
+        color: #fff;
+        font-weight: normal;
+        }
+        
+    .get{
+        border-radius:50px;
+        border-top-left-radius:50px;
+        border-top-right-radius:50px;
+        border-bottom-left-radius:50px;
+        border-bottom-right-radius:50px;
+        
+        display:block;
+        text-align:center;
+        font-size:16px;
+        color:#4F4F4F;
+        text-decoration:none;
+        height:34px;
+        background:rgba(255,255,255,0.50);
+        line-height:34px;
+        width:150px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:10px;
+        margin-top:10px;
+        border:1px solid #989898;
+        }
+        
+    #link{
+        display:block;
+        color:#fff;
+        padding-top:0px;
+        padding-bottom:0px;
+        background-color: rgba(255,255,255,0.07);
+        border-radius: 100px;}
+        
+    .bottom{
+        width:100%;
+        display:block;
+        text-align:center;
+        background:rgba(0,0,0,1.00);
+        height:50px;
+        margin-top:60px;
+        color:#FFFFFF;
+        line-height:50px;
+        font-size:14px;
+        }
+    
+    .main {
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        font-size: 21px;
+        font-weight: 400;
+        height: 20px;
+        margin-top:-30px;
+        margin-right:20px;
+        text-transform: uppercase;
+        width: 20px;
+        z-index: 100;
+        background-image:url(img/menu_btn.png);
+        background-repeat:no-repeat;
+        background-size:contain;
+        background-position:center;
+        float:right;
+    }
+        
+    #fullscreen {
+        background:#ffd12f;
+        bottom: 0;
+        border-radius: 0px;
+        color: #000;
+        display: block;
+        height: 100%;
+        left: 0;
+        margin: auto;
+        opacity: 0;
+        right: 0;
+        top: 0;
+        position:fixed;
+        width: 100%;
+        margin-top:0px;
+        z-index:-1;
+    
+    }
+    
+    .close {
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        font-size: 21px;
+        font-weight: 400;
+        height: 18px;
+        margin-top:19px;
+        margin-right:20px;
+        text-transform: uppercase;
+        width:18px;
+        z-index: 100;
+        background-image:url(img/close.png);
+        background-repeat:no-repeat;
+        background-size:contain;
+        background-position:center;
+        float:right;}
+    
+    .left {
+        display: block;
+        margin:auto;
+        width:100%;
+    }
+    
+    .menu_txt{
+        color: #767676;
+        font-weight: bolder;
+        font-size: 20px;
+        text-align: center;
+        width:280px;
+        height:50px;
+        margin-top:20px;
+        background-color:#fff;
+        line-height:50px;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        text-decoration:none;
+        border-radius:100px;
+        box-shadow:0px 5px 0px 0px #ffc725;
+        margin-bottom:0px;
+    }
+    
+    #menu_txt_top{
+        margin-top:80px;}
+        
+    .menu_pic{
+        background-image:url(img/menu_pic.png);
+        width:200px;
+        height:200px;
+        background-position:center;
+        background-repeat:no-repeat;
+        background-size:contain;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:20px;}
+        
+    .menu_txt_bottom{
+        text-align:center;
+        font-size:14px;
+        color:#e1af20;
+        margin-top:10px;
+        width:120px;
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        }
+        
+    .AD{
+        width:0px;
+        height:0px;
+        display:block;
+        font-size:0px;}
+    
+    </style>
+    </head>
+    
+    <body oncontextmenu="return false" onselectstart="return false">
+        <div class="nav">
+            <a class="logo_jabi" href="index.html"></a>
+            <ul class="menu">
+                <span class="main"></span>
+            </ul>
+        </div>
+        
+        <div id="fullscreen" style="opacity: 0; z-index: -1;">
+            <a class="logo_jabi" href="index.html"></a>
+            <span class="close"></span>
+            <div class="left">
+                <a class="menu_txt" id="menu_txt_top" href="wzyd.html">文章阅读</a>
+                <a class="menu_txt" href="ztmh.html">主题美化</a>
+                <a class="menu_txt" href="yyxz.html">应用下载</a>
+                <a class="menu_txt" href="jjgz.html">捷径规则</a>
+                <a class="menu_txt" href="HTTPS://QR.ALIPAY.COM/FKX05113HLO4ZGVSGARN9B">捐赠螃蟹君</a>
+                </div>
+             <div class="menu_pic"></div>
+             <a class="menu_txt_bottom">.com</a>
+        </div>
+        
+        <div class="tip">
+            <span class="topmenu" id="topmenunow" onclick="location.href='jjgz.html'">捷径</span>
+            <span class="topmenu" onclick="location.href='wf.html'">workflow</span>
+        
+        </div>
+        
+        
+        <div class="tip2">使用规则需要安装应用：捷径</div>
+        
+        <ul>
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/58ea64ed73634630bd0813574b284258'" style="background-color: rgb(253, 102, 49);box-shadow: 0px 0px 20px 2px rgba(253, 102, 49,0.40);">
+                <a class="tit">抖音去水印下载</a>
+                <a class="ms">去除抖音视频水印并下载到手机相册。</a>    
+            </li> 
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/9b02c23791f74486b50c112ddf6ece67'" style="background-color: rgb(25, 189, 2);box-shadow: 0px 0px 20px 2px rgba(25, 189, 2,0.40);">
+                <a class="tit">朋友圈大字</a>
+                <a class="ms">快速生成带气泡的大字图，可用于发朋友圈。</a>    
+            </li> 
+            
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/f3fbda26704b43aea180aa7584d6b761'" style="background-color: rgb(44, 194, 169);box-shadow: 0px 0px 20px 2px rgba(44, 194, 169,0.40);">
+                <a class="tit">编辑网页内容</a>
+                <a class="ms">让网页的文本内容处于可以编辑模式，用于截图装X。</a>    
+            </li> 
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/365c35057e724f5bbf7db2934905e7ea'" style="background-color: rgb(85, 218, 225);box-shadow: 0px 0px 20px 2px rgba(85, 218, 225,0.40);">
+                <a class="tit">音乐搜索神器</a>
+                <a class="ms">支持各大音乐平台的歌曲搜索，并能下载保存到本地。</a>    
+            </li> 
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/d9b0796472104b6386aa8f3417961ad8'" style="background-color: rgb(97, 113, 135);box-shadow: 0px 0px 20px 2px rgba(97, 113, 135,0.40);">
+                <a class="tit">截图加壳 X/Xs</a>
+                <a class="ms">支持 iPhone X 、Xs 、Xs Max 机型的截图加壳。</a>    
+            </li> 
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/a84b6971b2e04c85a0306f46b7b52258'" style="background-color: rgb(123, 114, 233);box-shadow: 0px 0px 20px 2px rgba(123, 114, 233,0.40);">
+                <a class="tit">截图加壳</a>
+                <a class="ms">支持 3.5 - 5.5 寸屏幕设备截图加壳。</a>    
+            </li>
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/2858f651ad9e4e74b704c8d984403a0a'" style="background-color: rgb(253, 102, 49);box-shadow: 0px 0px 20px 2px rgba(253, 102, 49,0.40);">
+                <a class="tit">查看文件信息</a>
+                <a class="ms">快速查看文件的格式、大小、容量等相关信息。</a>    
+            </li> 
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/5eebc9aaf17a47c09f78ce5712e2d870'" style="background-color: rgb(56, 113, 221);box-shadow: 0px 0px 20px 2px rgba(56, 113, 221,0.40);">
+                <a class="tit">获取 App Store 题图</a>
+                <a class="ms">快速把 App Store 今日推荐的文章封面或视频下载到手机相册中。</a>    
+            </li>
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/1e27b825a40841b387a567b9f5047c4a'" style="background-color: rgb(83,85,98);box-shadow: 0px 0px 20px 2px rgba(83,85,98,0.40);">
+                <a class="tit">长短连接转换</a>
+                <a class="ms">该捷径可以把长链接转换成为短链接或者把短链接还原成长链接。</a>    
+            </li> 
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/019265849cd548f39b3736c254458792'" style="background-color: rgb(56, 113, 221);box-shadow: 0px 0px 20px 2px rgba(56, 113, 221,0.40);">
+                <a class="tit">高德一键导航</a>
+                <a class="ms">运行规则后一键导航到目的地。</a>    
+            </li> 
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/322caba67f0b498fb3caf9a6ec8c9fc8'" style="background-color: rgb(83,85,98);box-shadow: 0px 0px 20px 2px rgba(83,85,98,0.40);">
+                <a class="tit">添加相机水印</a>
+                <a class="ms">为照片添加相机水印，支持所有 iPhone 机型。</a>    
+            </li> 
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/5dd5a483a1c545578803685defc152b4'" style="background-color: rgb(237, 70, 148);box-shadow: 0px 0px 20px 2px rgba(237, 70, 148,0.40);">
+                <a class="tit">九宫格切图</a>
+                <a class="ms">可以把图片切成9张，用于发朋友圈。还有几种形状可以选择。</a>    
+            </li>
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/b6858f7420d046bfbbd3e7818316584c'" style="background-color: rgb(25, 189, 2);box-shadow: 0px 0px 20px 2px rgba(25, 189, 2,0.40);">
+                <a class="tit">照片拼图</a>
+                <a class="ms">选择多张照片或图片，自定拼合成为一张图。</a>    
+            </li> 
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/b89343346ea44b828c924db35bd8bdc2'" style="background-color: rgb(123, 114, 233);box-shadow: 0px 0px 20px 2px rgba(123, 114, 233,0.40);">
+                <a class="tit">闪念胶囊</a>
+                <a class="ms">将一闪而过的想法或灵感快速存入到手机备忘录。</a>    
+            </li>
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/23a96cd81add462d8040094e6df6a36d'" style="background-color: rgb(97, 113, 135);box-shadow: 0px 0px 20px 2px rgba(97, 113, 135,0.40);">
+                <a class="tit">快速打开链接</a>
+                <a class="ms">复制网址后，点击捷径即可快速使用浏览器打开复制好的链接地址。</a>    
+            </li> 
+        
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/952bbaa035c64e50bbfa97bb26ca2480'" style="background-color: rgb(56, 113, 221);box-shadow: 0px 0px 20px 2px rgba(56, 113, 221,0.40);">
+                <a class="tit">Hey Siri！晚安</a>
+                <a class="ms">说声晚安。Siri 会自动帮你关闭Wi-Fi、关闭数据、开启勿扰模式、开启低电量、开启闹钟。</a>    
+            </li> 
+            
+            <li onclick="tishi();location.href='https://www.icloud.com/shortcuts/7d088deeb550430b91ea9954586b9cf6'" style="background-color: rgb(253, 102, 49);box-shadow: 0px 0px 20px 2px rgba(253, 102, 49,0.40);">
+                <a class="tit">早安</a>
+                <a class="ms">点击后开启Wi-Fi、数据、关闭勿扰模式、关闭低电量、取消闹钟。</a>    
+            </li> 
+            
+    
+        </ul>
+        
+        <noscript>&lt;iframe src="wf.html"&gt;&lt;/iframe&gt;</noscript>
+     
+        <div class="bottom">©螃蟹君（dhere.cn）</div>
+        
+        <div class="AD">
+        <script src="https://s13.cnzz.com/z_stat.php?id=1263819323&amp;web_id=1263819323" language="JavaScript"></script><script src="https://c.cnzz.com/core.php?web_id=1263819323&amp;t=z" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1263819323" target="_blank" title="站长统计">站长统计</a>
+        </div>
+        
+        <script>
+        $("span.main").click(function() {
+        $("#fullscreen").css("opacity", "1");
+        $("#fullscreen").css("z-index", "10");
+    });
+    
+        $("span.close").click(function() {
+        $("#fullscreen").css("opacity", "0");
+        $("#fullscreen").css("z-index", "-1");
+    });
+    
+        $("a.menu_txt").click(function() {
+        $("#fullscreen").css("opacity", "0");
+        $("#fullscreen").css("z-index", "-1");
+    });
+    
+        $("a.logo_jabi").click(function() {
+        $("#fullscreen").css("opacity", "0");
+        $("#fullscreen").css("z-index", "-1");
+    });
+        </script>
+    
+     
+    
+    </body></html>

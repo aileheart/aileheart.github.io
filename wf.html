@@ -1,0 +1,691 @@
+<html><head>
+<link rel="apple-touch-icon" href="../touch-icon-iphone.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+<script type="text/javascript" src="js/tishi.js"></script>
+
+<script src="js/jquery-2.1.1.min.js"></script>
+
+<meta charset="UTF-8">
+<title>螃蟹君Workflow规则-多开、神器、录屏、下载</title>
+<style type="text/css">
+
+@media print{
+BODY {display:none}
+}
+
+body{
+	margin:0px;
+	padding:0px;
+	font-family:Arial;
+	border:0px;
+	z-index:1;
+	}	
+
+.nav{
+	width:100%;
+	height:56px;
+	background-color:#282828;
+	position:fixed;
+	margin-top:-80px;
+	padding:0px;
+	z-index:2;
+	}
+
+.logo_jabi{
+	margin-top:8px;
+	margin-left:20px;
+	margin-right:0px;
+	height:20px;
+	float:left;
+	background-color:rgba(0,0,0,0.00);
+	background-image:url(img/menu_logo.png);
+	border-radius:30px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	height:40px;
+	width:40px;
+	}
+	
+.menu{
+	float:right;
+	display:block;
+	height:46px;
+	margin:0px;
+	padding:0px;
+	}
+	
+.tip{
+	display:block;
+	margin-top:80px;
+	margin-left:20px;
+	margin-right:20px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	color:#000;
+	font-size:16px;
+	padding-left:0px;
+	font-weight:bold;
+	}
+	
+.tip2{
+	display:block;
+	margin-top:20px;
+	margin-left:20px;
+	margin-right:20px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	color:#AFAFAF;
+	font-size:14px;
+	padding-left:10px;
+	padding-right:10px;
+	font-weight:normal;
+	}
+	
+.topmenu{
+	width: 48%;
+	display: block;
+	float: left;
+	background-color:#f1f1f1;
+	text-align: center;
+	border-radius:100px;
+	}
+	
+#topmenunow{
+	background-color: black;
+	color: white;
+	margin-left: 10px;
+	float: right;
+	}
+	
+ul{
+	margin-left:auto;
+	margin-right:auto;
+	padding:0px;
+	width:90%;
+	max-width:350px;
+	}
+	
+li{
+	padding:0px;
+	margin-top:20px;
+	margin-left:0;
+	margin-right:0;
+	list-style:none;
+	border:#EAEAEA 1px solid;
+	background:#f3f3f3;
+	border-radius:15px;
+	}
+	
+.tit{
+	height:50px;
+	display:block;
+	font-size:18px;
+	line-height:50px;
+	padding-left:20px;
+	margin:0px;
+	font-weight:bold;
+	background:#Fafafa;
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	}
+
+.ms{
+	display:block;
+	padding-left:20px;
+	font-size:14px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:20px;
+	color:#535353;
+	}
+	
+.get{
+	border-radius:50px;
+	border-top-left-radius:50px;
+	border-top-right-radius:50px;
+	border-bottom-left-radius:50px;
+	border-bottom-right-radius:50px;
+	
+	display:block;
+	text-align:center;
+	font-size:16px;
+	color:#4F4F4F;
+	text-decoration:none;
+	height:34px;
+	background:rgba(255,255,255,0.50);
+	line-height:34px;
+	width:150px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:10px;
+	margin-top:10px;
+	border:1px solid #989898;
+	}
+	
+#link{
+	color:#42ACEB;
+	padding-top:0px;
+	padding-bottom:0px;}
+	
+.bottom{
+	width:100%;
+	display:block;
+	text-align:center;
+	background:rgba(0,0,0,1.00);
+	height:50px;
+	margin-top:60px;
+	color:#FFFFFF;
+	line-height:50px;
+	font-size:14px;
+	}
+
+.main {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 21px;
+    font-weight: 400;
+    height: 20px;
+	margin-top:-30px;
+	margin-right:20px;
+    text-transform: uppercase;
+    width: 20px;
+    z-index: 100;
+	background-image:url(img/menu_btn.png);
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:center;
+	float:right;
+}
+	
+#fullscreen {
+    background:#ffd12f;
+    bottom: 0;
+    border-radius: 0px;
+    color: #000;
+    display: block;
+    height: 100%;
+    left: 0;
+    margin: auto;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    position:fixed;
+    width: 100%;
+	margin-top:0px;
+	z-index:-1;
+
+}
+
+.close {
+	color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 21px;
+    font-weight: 400;
+    height: 18px;
+	margin-top:19px;
+	margin-right:20px;
+    text-transform: uppercase;
+    width:18px;
+    z-index: 100;
+	background-image:url(img/close.png);
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:center;
+	float:right;}
+
+.left {
+    display: block;
+    margin:auto;
+	width:100%;
+}
+
+.menu_txt{
+    color: #767676;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+	width:280px;
+	height:50px;
+	margin-top:20px;
+	background-color:#fff;
+	line-height:50px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	text-decoration:none;
+	border-radius:100px;
+	box-shadow:0px 5px 0px 0px #ffc725;
+	margin-bottom:0px;
+}
+
+#menu_txt_top{
+	margin-top:80px;}
+	
+.menu_pic{
+	background-image:url(img/menu_pic.png);
+	width:200px;
+	height:200px;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;}
+	
+.menu_txt_bottom{
+	text-align:center;
+	font-size:14px;
+	color:#e1af20;
+	margin-top:10px;
+	width:120px;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	}
+	
+.AD{
+	width:0px;
+	height:0px;
+	display:block;
+	font-size:0px;}
+
+</style>
+</head>
+
+<body oncontextmenu="return false" onselectstart="return false">
+	<div class="nav">
+    	<a class="logo_jabi" href="index.html"></a>
+        <ul class="menu">
+            <span class="main"></span>
+        </ul>
+    </div>
+    
+    <div id="fullscreen">
+    	<a class="logo_jabi" href="index.html"></a>
+    	<span class="close"></span>
+    	<div class="left">
+        	<a class="menu_txt" id="menu_txt_top" href="wzyd.html">文章阅读</a>
+        	<a class="menu_txt" href="ztmh.html">主题美化</a>
+        	<a class="menu_txt" href="yyxz.html">应用下载</a>
+        	<a class="menu_txt" href="jjgz.html">捷径规则</a>
+            <a class="menu_txt" href="HTTPS://QR.ALIPAY.COM/FKX05113HLO4ZGVSGARN9B">捐赠螃蟹君</a>
+   		 </div>
+         <div class="menu_pic"></div>
+         <a class="menu_txt_bottom">jabizb.com</a>
+	</div>
+	
+	<div class="tip">
+		<span class="topmenu" onclick="location.href='jjgz.html'">捷径</span>
+		<span class="topmenu" id="topmenunow" onclick="location.href='wf.html'">workflow</span>
+	
+	</div>
+    
+    
+    <div class="tip2">使用规则需要安装应用：Workflow</div>
+    
+    <ul>
+    
+    <li>
+        	<a class="tit">可自定义外壳的带壳截图—iPhone X</a>
+            <a class="ms">可自定义选择图片来作为外壳样式，只支持 iPhone X</a>
+            <a class="ms" id="link" href="http://mp.weixin.qq.com/s/g_tI1a2vvnE5uTpF1aPkHA">点击阅读使用教程</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F0747035f2cba4a3f8ffd2c415b312f8e.wflow&amp;name=%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%A6%E5%A3%B3%E6%88%AA%E5%9B%BE-iPhone%20X">点击添加规则</a>     
+        </li> 
+        
+    	<li>
+        	<a class="tit">铃声下载</a>
+            <a class="ms">马林巴琴与欧美音乐的结合，下载到手机的规则</a>
+            <a class="ms" id="link" href="http://mp.weixin.qq.com/s/YJPjsTu9hAyVRCHAjnsrGw">点击阅读使用教程</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F090f3522bcce47528d8c7f15e9b2d9cf.wflow&amp;name=%E9%A9%AC%E6%9E%97%E5%B7%B4%E7%90%B4%E4%B8%8E%E6%AC%A7%E7%BE%8E%E9%9F%B3%E4%B9%90%E7%BB%93%E5%90%88%E6%9B%B2%E4%B8%8B%E8%BD%BD">点击添加规则</a>     
+        </li> 
+        
+    	<li>
+        	<a class="tit">螃蟹君-修改步数</a>
+            <a class="ms">可以修改微信、QQ、健康等运动步数。</a>
+            <a class="ms" id="link" href="http://mp.weixin.qq.com/s/HA05xUBG-qVstAYSuq0uAw">点击阅读使用教程</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fbd8a329e020b4d169418e57db7e6f1a7.wflow&amp;name=%E6%89%8E%E6%AF%94jabi-%E4%BF%AE%E6%94%B9%E6%AD%A5%E6%95%B0">点击添加规则</a>     
+        </li> 
+        
+        <li>
+        	<a class="tit">查看文件信息</a>
+            <a class="ms">快速查看文件相关信息，例如照片的尺寸、大小、格式，视频的长度、格式、大小等等。请看教程。</a>
+            <a class="ms" id="link" href="http://jabizb.com/jc/ckxx.html">点击阅读使用教程</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fe8d2a05b71e7485c867fbae0defef894.wflow&amp;name=%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF">点击添加规则</a>     
+        </li> 
+    
+    	<li>
+        	<a class="tit">今日NBA</a>
+            <a class="ms">通知中心快速查看今日NBA赛果、东部排行、西部排行。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fc5110a46cd6846cb91ce367fe1acf602.wflow&amp;name=%E4%BB%8A%E6%97%A5NBA">点击添加规则</a>
+        </li> 
+    
+    <li>
+        	<a class="tit">小辫子表情</a>
+            <a class="ms">把表情外面套上一个小辫儿，像这样 િ🌚ી，你可以随意输入表情，都会套上外面的两个小辫儿。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F86eae8f4b97a41d5b8ff5ea622ba5914.wflow&amp;name=%E5%B0%8F%E8%BE%AB%E5%84%BFEmoji%E8%A1%A8%E6%83%85">点击添加规则</a>
+        </li> 
+    
+     <li>
+        	<a class="tit">川普推特生成器</a>
+            <a class="ms">生成特朗普·川普推特的恶搞图片。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F190da4c818d348b49e47f16748f8192c.wflow&amp;name=%E5%B7%9D%E6%99%AE%E6%8E%A8%E7%89%B9%E7%94%9F%E6%88%90%E5%99%A8">点击添加规则</a>
+        </li> 
+    
+    <li>
+        	<a class="tit">保存网页到iBook</a>
+            <a class="ms">复制要保存的网页链接地址，然后运行规则。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F0429d4aa8211470eb4e3248db899bfa9.wflow&amp;name=%E4%BF%9D%E5%AD%98%E7%BD%91%E9%A1%B5%E5%88%B0iBook">点击添加规则</a>
+        </li> 
+    
+    <li>
+        	<a class="tit">App Store 地区切换</a>
+            <a class="ms">切换苹果软件商店App Store的地区。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F027703299fdc40e5b31a310525b9c6dc.wflow&amp;name=App%E5%95%86%E5%BA%97%E5%9C%B0%E5%8C%BA%E5%88%87%E6%8D%A2">点击添加规则</a>
+        </li> 
+    
+              <li>
+        	<a class="tit">联系人分享</a>
+            <a class="ms">快速选择手机通讯录的联系人，把名字与号码复制到剪切板或者直接分享到其它应用。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fa036652a4c4940048b919bd74fde411e.wflow&amp;name=%E8%81%94%E7%B3%BB%E4%BA%BA%E5%88%86%E4%BA%AB">点击添加规则</a>
+        </li> 
+              
+              <li>
+        	<a class="tit">应用搜索</a>
+            <a class="ms">快速搜索App下载。输入应用名称，选择需要下载的应用，点击“Done”。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F052c33ec0fe949e5b5442ff0e13fba83.wflow&amp;name=%E5%BA%94%E7%94%A8%E6%90%9C%E7%B4%A2">点击添加规则</a>
+        </li> 
+    
+                  <li>
+        	<a class="tit">以图搜图</a>
+            <a class="ms">选择相册一张图片来搜索相似的图片。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F5d5cca38108e40cabb90019a4a5a37cb.wflow&amp;name=%E4%BB%A5%E5%9B%BE%E6%90%9C%E5%9B%BE">点击添加规则</a>
+        </li> 
+    
+               <li>
+        	<a class="tit">群发短信</a>
+            <a class="ms">运行规则，输入需要发的内容，选择群发的联系人，即可群发短信。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Faecad3fe46c84235b489c89affa2f459.wflow&amp;name=%E7%BE%A4%E5%8F%91%E7%9F%AD%E4%BF%A1">点击添加规则</a>
+        </li>
+    
+                <li>
+        	<a class="tit">高德一键导航</a>
+            <a class="ms">对话框输入地名，一键进入高德地图进行导航。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F3cdd4d4151e24faba3997e35ef5238e5.wflow&amp;name=%E9%AB%98%E5%BE%B7%E4%B8%80%E9%94%AE%E5%AF%BC%E8%88%AA">点击添加规则</a>
+        </li>
+    
+            <li>
+        	<a class="tit">获取秒拍客户端视频</a>
+            <a class="ms">把秒拍客户端的视频下载到相册。找到视频点击分享，再点击复制链接即可使用规则。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F8a78335ca68d47d1bb43f02eb9c09366.wflow&amp;name=%E7%A7%92%E6%8B%8D%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD">点击添加规则</a>
+        </li>
+        
+        <li>
+        	<a class="tit">获取网易新闻视频</a>
+            <a class="ms">把网易新闻客户端的视频下载到相册。</a>
+            <a class="ms" id="link" href="http://jabizb.com/jc/wyxsp.html">点击阅读使用教程</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fc4adeac2f8fb4f8fac3c76248ef5ea38.wflow&amp;name=%E8%8E%B7%E5%8F%96%E7%BD%91%E6%98%93%E6%96%B0%E9%97%BB%E8%A7%86%E9%A2%91">点击添加规则</a>
+        </li>
+    
+    <li>
+        	<a class="tit">二维码转链接</a>
+            <a class="ms">扫一扫二维码转换成链接地址，并复制到剪切板。直接到想分享的地方粘贴地址就可以。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F9892d63acaf74a0fafd8807c594a52f4.wflow&amp;name=%E4%BA%8C%E7%BB%B4%E7%A0%81%E8%BD%AC%E9%93%BE%E6%8E%A5">点击添加规则</a>
+        </li>
+        
+        <li>
+        	<a class="tit">带壳截图分尺寸版</a>
+            <a class="ms">17/03/29:修复iPhone7p的亮黑外壳、添加iPhone7和7P的红色外壳。</a>
+            <a class="ms">一键使用。请下载与您屏幕尺寸一致的规则。傻瓜式带壳截图，无须下载任何外壳文件。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F2d1a6e6ea08249139f6f171889e311da.wflow&amp;name=%E5%B8%A6%E5%A3%B3%E6%88%AA%E5%9B%BE3.5">点击添加3.5寸规则</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F0399303b08214c6c98a4586d434df787.wflow&amp;name=%E5%B8%A6%E5%A3%B3%E6%88%AA%E5%9B%BE%204.0">点击添加4.0寸规则</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fc0ddea61e7a5470d9b541fa4a4b2d1c5.wflow&amp;name=%E5%B8%A6%E5%A3%B3%E6%88%AA%E5%9B%BE4.7">点击添加4.7寸规则</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F50f4d25896c04c8abf9ff4a450bf9add.wflow&amp;name=%E5%B8%A6%E5%A3%B3%E6%88%AA%E5%9B%BE5.5">点击添加5.5寸规则</a>
+        </li>
+        <li>
+        	<a class="tit">带壳截图</a>
+            <a class="ms">17/03/29:修复iPhone7p的亮黑外壳、添加iPhone7和7P的红色外壳。</a>
+            <a class="ms">全机型版傻瓜式带壳截图，无须下载任何外壳文件。一键使用。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fa1c0d546b477410ca96b73adae4f1da7.wflow&amp;name=%E5%B8%A6%E5%A3%B3%E6%88%AA%E5%9B%BE">点击添加规则</a>
+        </li>
+
+    	<li>
+        	<a class="tit">保存照片到iBook</a>
+            <a class="ms">把所选的照片以PDF的形式保存在iBook。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F67d9b58b96774edc8d0742d64d7177e2.wflow&amp;name=%E4%BF%9D%E5%AD%98%E7%85%A7%E7%89%87%E5%88%B0iBook">点击添加规则</a>
+        </li>
+        
+    	<li>
+        	<a class="tit">头条视频下载</a>
+            <a class="ms">把今日头条视频下载到相册。找到视频点击分享，再点击复制链接即可使用规则。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Faa2631616e734cfdab82885a4bb2ce52.wflow&amp;name=%E5%A4%B4%E6%9D%A1%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD">点击添加规则</a>
+        </li>
+    
+    	<li>
+        	<a class="tit">快速拨号</a>
+            <a class="ms">快速拨打设置好的联系，可以自行添加联系人。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fcc218523e9d54a76a5c24ba93647712a.wflow&amp;name=%E5%BF%AB%E9%80%9F%E6%8B%A8%E5%8F%B7">点击添加规则</a>
+        </li>
+
+        <li>
+             <a class="tit">快速拨号2</a>
+            <a class="ms">快速打开联系人列表，进行拨号。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F05937b514ec24c4098dc4e18c1cf54ea.wflow&amp;name=%E5%BF%AB%E9%80%9F%E6%8B%A8%E5%8F%B7">点击添加规则</a>        
+        </li>
+        
+        <li>
+        	<a class="tit">快捷开关</a>
+            <a class="ms">手机设置的快捷开关，如：Wi-Fi、蜂窝数据、定位等。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F9aed870476c74f28981ae307d836dde3.wflow&amp;name=%E6%89%8B%E6%9C%BA%E8%AE%BE%E7%BD%AE">点击添加规则</a>
+        </li>
+        
+        <li>
+        	<a class="tit">用Safari打开粘贴板的网址</a>
+            <a class="ms">复制一个网址之后，按一下就能在Safari打开这个网址。</a>
+            <a class="ms">更新于：2017/03/25</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fd1d2c6227ca347cb856f7c4ea37c6ab8.wflow&amp;name=%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E5%9C%B0%E5%9D%80">点击添加规则</a>
+        </li>
+        
+        <li>
+        	<a class="tit">有道翻译</a>
+            <a class="ms">直接翻译粘贴板里面的单词，可以中译英和英译中。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Faa069b440ef3482db47f32654a652253.wflow&amp;name=%E6%9C%89%E9%81%93%E7%BF%BB%E8%AF%91">点击添加规则</a>
+        </li>
+        
+        <li>
+        	<a class="tit">扫一扫</a>
+            <a class="ms">能够直接扫描任何的二维码和条形码。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fed3c3bb479e2487f87f293546adc6f5e.wflow&amp;name=%E6%89%AB%E4%B8%80%E6%89%AB">点击添加规则</a>
+        </li>
+        
+        <li>
+        	<a class="tit">保存汤不热视频到相册</a>
+            <a class="ms">能把汤不热的视频下载保存到相册，你懂的。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F897924d6858d47a4a6737733517a36eb.wflow&amp;name=Tumblr%20Save%20to%20Camera%20Roll">点击添加规则</a>
+        </li>
+        
+        <li>
+        	<a class="tit">网址链接转换</a>
+            <a class="ms">把长链接转换成短链接。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F3c9c5da0ef424396a31fc3845bf340f0.wflow&amp;name=%E7%BD%91%E5%9D%80%E9%93%BE%E6%8E%A5%E8%BD%AC%E6%8D%A2">点击添加规则</a>
+        </li>
+        
+        <li>
+        	<a class="tit">获取本机IP地址</a>
+            <a class="ms">一键获取手机目前网络的IP地址。	</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fbc3907eb385a4a8a8f93dbad625d7300.wflow&amp;name=%E8%8E%B7%E5%8F%96%E6%9C%AC%E6%9C%BAIP%E4%BF%A1%E6%81%AF">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">图片编辑</a>
+            <a class="ms">直接对相册里面的照片进行编辑，如裁剪。编辑完可以直接分享。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F48feeaa387d74b3faaafaa383401bb49.wflow&amp;name=%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91">点击添加规则</a>
+        </li>
+        
+        <li>
+        	<a class="tit">分享截图</a>
+            <a class="ms">可以直接分享相册里面的最后一张照片或截图。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F97d0b90c223949939f077e6efe2a0071.wflow&amp;name=%E5%88%86%E4%BA%AB%E6%88%AA%E5%9B%BE">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">下载网易云MV</a>
+            <a class="ms">可以把网易云音乐客户端里面的MV下载到相册或者以视频方式分享到其它应用。<br>用法：在网易云音乐MV播放界面点击分享按钮，然后选择复制链接，然后点击这个。（可选清晰度240p-1080p）</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F4b44b54bc153424bb0ba0563dd9807cd.wflow&amp;name=%E4%B8%8B%E8%BD%BD%E7%BD%91%E6%98%93%E4%BA%91MV">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">流量查询</a>
+            <a class="ms">发送查流量的信息到运营商，支持移动和联通。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F068d7774623245a8849b5a051c41ee6d.wflow&amp;name=%E6%B5%81%E9%87%8F%E6%9F%A5%E8%AF%A2">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">快速发短信</a>
+            <a class="ms">直接可以输入内容选择联系人发送短信。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fb0e5122138b94af68ac0dc00a037f05c.wflow&amp;name=%E5%BF%AB%E9%80%9F%E5%8F%91%E7%9F%AD%E4%BF%A1">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">获取Twitter视频</a>
+            <a class="ms">用来获取Twitter视频的规则。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F087a0abf12c049dd9ab256afaec790c0.wflow&amp;name=Get%20Twitter%20Video">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">获取Twitter的Gif</a>
+            <a class="ms">用来获取Twitter的Gif的规则。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Faa9821c4bce44b6f8febcbda6245c1f0.wflow&amp;name=Download%20Twitter%20GIF">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">听音识曲</a>
+            <a class="ms">快速进入网易云音乐的听歌识曲界面，让你不错过每一首歌。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F3de69750eadd459888f1e92554ce96fc.wflow&amp;name=%E5%90%AC%E9%9F%B3%E8%AF%86%E6%9B%B2">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">速拍分享</a>
+            <a class="ms">快速进入拍照界面，并可以分享到任意app。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fcc2dbc270590461ea4f56a0110c2ac57.wflow&amp;name=%E9%80%9F%E6%8B%8D%E5%88%86%E4%BA%AB">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">小工具</a>
+            <a class="ms">包括：支付宝付款、支付宝扫码、微信扫一扫、本机信息、快递查询。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fbc9ca6660404466591d7d0beb16f9d00.wflow&amp;name=%E5%B0%8F%E5%B7%A5%E5%85%B7">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">App旧版本抓包</a>
+            <a class="ms">可以抓包App的旧版代码，福利利器。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F77d7209b9afa4771899873f4049c453d.wflow&amp;name=App%E6%97%A7%E7%89%88%E6%9C%AC%E6%8A%93%E5%8C%85">点击添加规则</a>
+        </li>
+
+
+        <li>
+        	<a class="tit">播放音乐</a>
+            <a class="ms">直接打开网易云的播放列表播放音乐。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F3c1a254e05534267bd0b6aac16bc0a0c.wflow&amp;name=%E6%92%AD%E6%94%BE%E9%9F%B3%E4%B9%90">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">快速下载mp3</a>
+            <a class="ms">快速下载mp3，包括付费和免费歌曲，福利哦！</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F90a32e30d39648c897f6dd9077706914.wflow&amp;name=%E5%BF%AB%E9%80%9F%E4%B8%8B%E8%BD%BDmp3">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">网易云音乐下载</a>
+            <a class="ms">能够下载网易云的收费音乐。在网易云音乐找到您要下载的音乐，点击分享，然后点击复制链接就可以使用该规则。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F04bb2f6913f94812b141093f1f09d9b7.wflow&amp;name=%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">快捷启动</a>
+            <a class="ms">
+            应用的快捷启动器，可以自行添加应用或删除应用。具体方法可以观看教程：
+            </a>
+            <a class="ms" id="link" href="http://bbs.feng.com/read-htm-tid-11182991.html">点击进入查看教程</a>  
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fc04010e24fdd4f65b8ee2f52ee6844a9.wflow&amp;name=%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">获取App图标</a>
+            <a class="ms">使用需要翻墙。可以把应用图标以图片形式保存到相册或者分享到其它应用。</a>
+            <a class="ms">使用教程：(1)进入App store - (2)搜索需要下载图标的应用 - (3)进入app的介绍页 - (4)点击右上角的分享按钮 - (5)点击复制链接 - (6)最后可以使用这个规则了。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F1355858c5abd4f7b89dc406116fb2a50.wflow&amp;name=%E8%8E%B7%E5%8F%96App%E5%9B%BE%E6%A0%87">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">淘宝搜索</a>
+            <a class="ms">可以通过输入或者复制一个商品名称来直接进到淘宝搜索结果界面。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F6af455909d704f5da13f158d13e41a25.wflow&amp;name=%E6%B7%98%E5%AE%9D%E6%90%9C%E7%B4%A2">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">在Chrome打开链接</a>
+            <a class="ms">直接在Chrome(谷歌浏览器)打开复制好的链接。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F0db00ea99a04495782b6f3cf8dfd8a4b.wflow&amp;name=%E5%9C%A8Chrome%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">保存备忘录</a>
+            <a class="ms">把复制的内容快速保存到备忘录里。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fccf043bea86649c08d560350b9f718b7.wflow&amp;name=%E4%BF%9D%E5%AD%98%E5%A4%87%E5%BF%98%E5%BD%95">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">百度搜索</a>
+            <a class="ms">使用Safari打开百度来搜索复制的内容。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2F0db9508e30b14626b8c5ee5245e3763b.wflow&amp;name=%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2">点击添加规则</a>
+        </li>
+
+        <li>
+        	<a class="tit">获取bilibili视频封面</a>
+            <a class="ms">进入biliibili客户端视频播放界面，点击分享后再点击复制链接，方可使用规则。再也不用求封面了。</a>
+            <a class="get" onclick="tishi()" href="workflow://import-workflow/?url=https%3A%2F%2Fworkflow.is%2Fworkflows%2Fe12c2eef193641b0a663069750dd14a0.wflow&amp;name=%E8%8E%B7%E5%8F%96bilibili%E8%A7%86%E9%A2%91%E5%B0%81%E9%9D%A2">点击添加规则</a>
+        </li>
+
+    </ul>
+    
+    <noscript>&lt;iframe src="wf.html"&gt;&lt;/iframe&gt;</noscript>
+ 
+    <div class="bottom">©螃蟹君（dhere.cn）</div>
+    
+    <div class="AD">
+	<script src="https://s13.cnzz.com/z_stat.php?id=1263819323&amp;web_id=1263819323" language="JavaScript"></script><script src="https://c.cnzz.com/core.php?web_id=1263819323&amp;t=z" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1263819323" target="_blank" title="站长统计">站长统计</a>
+    </div>
+    
+    <script>
+    $("span.main").click(function() {
+	$("#fullscreen").css("opacity", "1");
+	$("#fullscreen").css("z-index", "10");
+});
+
+	$("span.close").click(function() {
+    $("#fullscreen").css("opacity", "0");
+    $("#fullscreen").css("z-index", "-1");
+});
+
+	$("a.menu_txt").click(f
+		
+		
+		unction() {
+    $("#fullscreen").css("opacity", "0");
+    $("#fullscreen").css("z-index", "-1");
+});
+
+	$("a.logo_jabi").click(function() {
+    $("#fullscreen").css("opacity", "0");
+    $("#fullscreen").css("z-index", "-1");
+});
+	</script>
+
+ 
+
+</body></html>
